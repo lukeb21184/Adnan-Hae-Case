@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gov Adnan Case Extension</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #c0392b;
+            text-decoration: none;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-color);
+        }
+        
+        section h3 {
+            color: var(--dark-color);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        section p {
+            margin-bottom: 1rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -48px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid var(--secondary-color);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        /* Evidence Grid */
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .evidence-card {
+            background: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .evidence-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .evidence-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1.5rem;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 0.75rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline {
+                padding-left: 30px;
+            }
+            
+            .timeline-item::before {
+                left: -28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Gov <span>Adnan Case</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#timeline">Timeline</a></li>
+                    <li><a href="#evidence">Evidence</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Gov Adnan Case Extension</h1>
+            <a href="#overview" class="btn">View Case Details</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content container">
+        <!-- Overview Section -->
+        <section id="overview">
+            <h2>Case Overview</h2>
+            <p>Adnan Syed was convited of the murder of  his ex girlfriend Hae Min Lee </p>
+            
+            <h3>Case Facts</h3>
+            <ul>
+                <li><strong>Victim:</strong> Hae Min Lee, 18-year-old high school student</li>
+                <li><strong>Defendant:</strong> Adnan Syed, ex boyfriend of Hae and Cristina Gutierrez</li>
+                <li><strong>Date of Crime:</strong> January 13, 1999</li>
+                <li><strong>Location:</strong> Baltimore, Maryland</li>
+                <li><strong>Legal Outcome:</strong> Convicted February 25th, 2000</li>
+            </ul>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline">
+            <h2>Case Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">January 13, 1999</div>
+                    <p>Hae Min Lee disappears after school.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">February 9, 1999</div>
+                    <p>Lee's body is found in Leakin Park.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">February 28, 1999</div>
+                    <p>Adnan Syed is arrested and charged.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">February 25, 2000</div>
+                    <p>Syed is convicted of first-degree murder.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Evidence Section -->
+        <section id="evidence">
+            <h2>Case Evidence</h2>
+            <p>Key evidence presented in the case:</p>
+            
+            <div class="evidence-grid">
+                <div class="evidence-card">
+                    <h4>Witnesses</h4>
+                    <p>Testimony from Jay Wilds stating that Adnan is guilty of the murder.</p>
+                </div>
+                
+                <div class="evidence-card">
+                    <h4>Cell Records</h4>
+                    <p>Cell tower data locating Adnan near burial site.</p>
+                </div>
+                
+                <div class="evidence-card">
+                    <h4>Hae Min Lee’s Car Location</h4>
+                    <p>Her car was found abandoned in a lot that Jay led police to. Meaning Jay has inside info on the case and is a witness. </p>
+                </div>
+                
+                <div class="evidence-card">
+                    <h4>Lack of Defense</h4>
+                    <p>Defendent wouldn't look into Adnan's call records nor test Hae's corpse for DNA.</p>
+                </div>
+
+                <div class="evidence-card">
+                    <h4>Unreliable Cell Tower Evidence</h4>
+                    <p>Incoming call data used to place Adnan near Leakin Park could be unreliable.</p>
+                </div>
+
+                <div class="evidence-card">
+                    <h4>Asia as Alibi</h4>
+                    <p>Asia states that she saw Adnan at the library at the time of Hae’s disappearance. Adnan’s defense never contacted her though.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">Gov <span>Adnan Case</span></div>
+            <div class="footer-links">
+                <a href="#overview">Overview</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#evidence">Evidence</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
